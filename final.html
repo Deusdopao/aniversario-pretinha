@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pra Você ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      color: white;
+    }
+
+    /* 🎬 VÍDEO DE FUNDO */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    /* 🌑 overlay */
+    .overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: -1;
+    }
+
+    /* 💘 CONTEÚDO */
+    .container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .content {
+      max-width: 700px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .final {
+      font-size: 1.8rem;
+      margin-top: 30px;
+      font-weight: bold;
+      color: #ff4d6d;
+    }
+
+    /* ✨ animação */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 📱 RESPONSIVO */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+
+      .final {
+        font-size: 1.5rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- 🎬 VÍDEO -->
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="video.mp4" type="video/mp4">
+  </video>
+
+    <audio autoplay loop>
+    <source src="musicafinal.mp3" type="audio/mpeg">
+    </audio>
+
+  <div class="overlay"></div>
+
+  <div class="container">
+    <div class="content">
+      <h1>Obrigado por tudo pretinha ❤️</h1>
+
+      <p>
+        Eu só queria te lembrar o quanto você é especial pra mim.  
+        Tudo que a gente viveu, nossas risadas, foi tudo unico. 
+        Tudo isso faz minha vida ter sentido.
+      </p>
+
+      <p>
+        Você não é só uma pessoa,  
+        você é a melhor parte dos meus dias.
+      </p>
+
+      <p>
+        E independente de qualquer coisa,  
+        Daria minha vida por voce.
+      </p>
+
+      <div class="final">
+        Eu te amo ❤️
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

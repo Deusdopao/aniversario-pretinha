@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosso Momento ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+
+    /* Fundo com slideshow */
+    .background {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      animation: slideShow 40s infinite;
+      z-index: -1;
+    }
+
+    @keyframes slideShow {
+      0% { background-image: url('foto1.jpeg'); }
+      8% { background-image: url('foto2.jpeg'); }
+      16% { background-image: url('foto3.jpeg'); }
+      24% { background-image: url('foto4.jpeg'); }
+      32% { background-image: url('foto5.jpeg'); }
+      40% { background-image: url('foto6.jpeg'); }
+      48% { background-image: url('foto7.jpeg'); }
+      56% { background-image: url('foto8.jpeg'); }
+      64% { background-image: url('foto9.jpeg'); }
+      72% { background-image: url('foto10.jpeg'); }
+      80% { background-image: url('foto11.jpeg'); }
+      88% { background-image: url('foto12.jpeg'); }
+      100% { background-image: url('foto13.jpeg'); }
+    }
+
+    /* Camada escura */
+    .overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+
+    /* Container */
+    .container {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px;
+      color: white;
+      z-index: 1;
+    }
+
+    .text {
+      width: 40%;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+    }
+
+    .left { text-align: left; }
+
+    .right {
+      text-align: center;
+      max-width: 500px;
+    }
+
+    /* Botão */
+    .botao-container {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 40px 0;
+      z-index: 1;
+    }
+
+    .botao-container button {
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 30px;
+      background-color: #ff4d6d;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .botao-container button:hover {
+      background-color: #ff1e4d;
+      transform: scale(1.05);
+    }
+
+    /* RESPONSIVO (CELULAR) */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+      }
+
+      .text {
+        width: 100%;
+        max-width: 90%;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="background"></div>
+  <div class="overlay"></div>
+
+  <!-- Música -->
+  <audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    
+    <div class="text left">
+      FELIZZZZ ANIVERSARIO PRETINHAAAAA, muito obrigado por tudo, obrigado por existirrr, voce é uma benção na minha vida, 
+      voce sempre foi minha luz, sempre agregou, sempre me fortaleceu e sempre foi tudo pra mim. 
+      <br><br>
+      Estou muito feliz por hoje ser seu dia, porque ja pensou não acontecesse hoje?? 
+      Eu com certeza não ia ter descoberto o que é o amor. 
+      O amor é voce, é seu sorriso, seus olhos, seu cabelo, sua risada, 
+      voce por completa. 
+    </div>
+
+    <div class="text right">
+      Voce vai conquistar tudo que almeja, todos seus sonhos vão se realizar. <br> 
+      Com certeza vou estar aqui pra ver isso, estarei bem de pertinho torcendo por voce. <br>
+      Não importa o que falam, o que acham, o que importa é voce ser feliz e buscar o que ama.
+      Voce sempre foi capaz, e só evoluiu, a thayssinha de anos atras tem orgulho de ti.
+      <br><br>
+      Aproveite seu diaaa, que voce aproveite sua vidaaa e seja feliz sempre, 
+      porque é o que voce merece. <br>
+      Pode contar comigo sempre!
+    </div>
+
+  </div>
+
+  <div class="botao-container">
+    <button onclick="proximaPagina()">Ultima coisinha 💘</button>
+  </div>
+
+  <script>
+    function proximaPagina() {
+      window.location.href = "final.html";
+    }
+  </script>
+
+</body>
+</html>
