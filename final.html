@@ -72,6 +72,29 @@
       color: #ff4d6d;
     }
 
+    /* 🔥 BOTÃO DE MÚSICA */
+    .play-btn {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      background: #ff4d6d;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      z-index: 10;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: translateX(-50%) scale(1); }
+      50% { transform: translateX(-50%) scale(1.05); }
+      100% { transform: translateX(-50%) scale(1); }
+    }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -85,17 +108,9 @@
 
     /* 📱 RESPONSIVO */
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      p {
-        font-size: 1.1rem;
-      }
-
-      .final {
-        font-size: 1.5rem;
-      }
+      h1 { font-size: 2rem; }
+      p { font-size: 1.1rem; }
+      .final { font-size: 1.5rem; }
     }
 
   </style>
@@ -107,7 +122,7 @@
     <source src="video.mp4" type="video/mp4">
   </video>
 
-  <!-- 🔊 ÁUDIO CORRETO -->
+  <!-- 🔊 ÁUDIO -->
   <audio id="musica" loop>
     <source src="musicafinal.mp3" type="audio/mpeg">
   </audio>
@@ -140,19 +155,20 @@
     </div>
   </div>
 
-  <!-- 🔥 SCRIPT QUE FAZ FUNCIONAR NO CELULAR -->
-  <script>
-    window.addEventListener("load", function() {
-      const audio = document.getElementById("musica");
+  <!-- 🔥 BOTÃO PRA TOCAR MÚSICA -->
+  <button class="play-btn" onclick="tocarMusica()">
+    Tocar música ❤️
+  </button>
 
-      setTimeout(() => {
-        audio.play().catch(() => {
-          document.addEventListener("click", () => {
-            audio.play();
-          }, { once: true });
-        });
-      }, 1000);
-    });
+  <!-- 🔥 SCRIPT -->
+  <script>
+    function tocarMusica() {
+      const audio = document.getElementById("musica");
+      audio.play();
+
+      // remove o botão depois de clicar
+      document.querySelector(".play-btn").style.display = "none";
+    }
   </script>
 
 </body>
