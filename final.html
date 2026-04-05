@@ -72,7 +72,6 @@
       color: #ff4d6d;
     }
 
-    /* ✨ animação */
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -108,9 +107,10 @@
     <source src="video.mp4" type="video/mp4">
   </video>
 
-    <audio autoplay loop>
+  <!-- 🔊 ÁUDIO CORRETO -->
+  <audio id="musica" loop>
     <source src="musicafinal.mp3" type="audio/mpeg">
-    </audio>
+  </audio>
 
   <div class="overlay"></div>
 
@@ -139,6 +139,21 @@
       </div>
     </div>
   </div>
+
+  <!-- 🔥 SCRIPT QUE FAZ FUNCIONAR NO CELULAR -->
+  <script>
+    window.addEventListener("load", function() {
+      const audio = document.getElementById("musica");
+
+      setTimeout(() => {
+        audio.play().catch(() => {
+          document.addEventListener("click", () => {
+            audio.play();
+          }, { once: true });
+        });
+      }, 1000);
+    });
+  </script>
 
 </body>
 </html>
